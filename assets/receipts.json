@@ -1,0 +1,76 @@
+{
+    "hints": [
+        {
+            "recipe": {
+                "label": "Борщ",
+                "img": "https://img.delo-vcusa.ru/2020/11/Borshh-s-yablokami.jpg",
+                "raiting": 5,
+                "ingredientLines": [
+                    "Свинина или говядина на кости",
+                    "Свекла",
+                    "Лук",
+                    "Томатная паста",
+                    "Капуста",
+                    "Картошка"
+                ]   
+            }
+        },
+        {
+            "recipe": {
+                "label": "Омлет",
+                "raiting": 3,
+                "img": "https://www.gastronom.ru/binfiles/images/20200320/b300e18f.jpg",
+                "ingredientLines": [
+                    "Яйца",
+                    "Молоко"
+                ]   
+            }
+        },
+        {
+            "recipe": {
+                "label": "Блины",
+                "raiting": 2,
+                "img": "https://www.gastronom.ru/binfiles/images/20150205/b0aa43ac.jpg",
+                "ingredientLines": [
+                    "Вода",
+                    "Яйца",
+                    "Мука"
+                ]   
+            }
+        },
+        {
+            "recipe": {
+                "label": "Фаршированные перцы",
+                "raiting": 3,
+                "img": "https://www.gastronom.ru/binfiles/images/20170927/beb76f44.jpg",
+                "ingredientLines": [
+                    "Перец",
+                    "Фарш",
+                    "Рис"
+                ]
+            }
+        },
+        {
+            "recipe": {
+                "label": "Сырники",
+                "raiting": 5,
+                "img": "https://www.gastronom.ru/binfiles/images/00000190/00114884.jpg",
+                "ingredientLines": [
+                    "Творог",
+                    "Яйца",
+                    "Мука"
+                ]
+            }
+        },
+        {
+            "recipe": {
+                "label": "Шоколадный тест",
+                "raiting": 1,
+                "img": "https://www.koolinar.ru/all_image/recipes/137/137034/recipe_0cb501fa-7100-4bd2-bc8f-28edd7af398b.jpg",
+                "ingredientLines": [
+                    "Шоколад"
+                ]
+            }
+        }
+    ]
+}
