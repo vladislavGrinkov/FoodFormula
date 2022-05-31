@@ -11,7 +11,6 @@ class Barcodes {
     List<dynamic> findQrCode = data['barcodes'];
     final object =
         findQrCode.where((element) => element['_ipcean'] == scanQr).toList();
-    print("ANSWER ${object}");
     return object;
   }
 }

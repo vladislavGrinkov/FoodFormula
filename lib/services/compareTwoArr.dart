@@ -3,7 +3,6 @@ bool compareTwoArr(receipt, basket) {
       .where((item) =>
           basket.where((elem) => elem == item).length > 0 ? true : false)
       .toList();
-  print(result.length);
 
   if (result.length == 0) {
     return (false);

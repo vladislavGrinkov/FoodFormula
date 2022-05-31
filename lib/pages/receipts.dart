@@ -14,6 +14,7 @@ import 'package:scan_food/services/generate_stars.dart';
 import 'package:scan_food/services/unique_ingredients.dart';
 import 'package:scan_food/store/actions.dart';
 import 'package:scan_food/store/store.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class Receipts extends StatefulWidget {
   List<dynamic> params = [];
@@ -100,15 +101,12 @@ class _ReceiptsState extends State<Receipts> {
                                       '${item['recipe']['label']}',
                                     ),
                                   ),
-                                ],
-                              ),
-                              subtitle: Padding(
-                                padding: EdgeInsets.only(top: 10),
-                                child: Row(
-                                  children: generateStars(
-                                    item['recipe']['raiting'],
+                                  StoreConnector<AppState, AppState>(
+                                    converter: (store) => store.state,
+                                    builder: (context, state) =>
+                                        drawIndicator(item, state.list),
                                   ),
-                                ),
+                                ],
                               ),
                             ),
                           ),
@@ -155,6 +153,34 @@ class _ReceiptsState extends State<Receipts> {
           ),
         )
         .toList();
+  }
+
+  Widget drawIndicator(dynamic receipt, List<dynamic> list) {
+    print("drawIndicator: ${list}");
+    List ingr = receipt["recipe"]["ingredientLines"] as List;
+
+    var res = ingr
+        .map((val) {
+          return list.where((item) {
+            return item["_name"] == val ? true : false;
+          }).toList();
+        })
+        .toList()
+        .where((val) => !val.isEmpty)
+        .toList();
+
+    double percent = res.length / ingr.length;
+
+    return CircularPercentIndicator(
+      radius: 18.0,
+      lineWidth: 2.0,
+      percent: percent,
+      center: Icon(
+        percent < 1 ? Icons.pending_actions_rounded : Icons.done,
+        color: Colors.green,
+      ),
+      progressColor: Colors.green,
+    );
   }
 
   void addReceiptInStore(dynamic receipt) {
